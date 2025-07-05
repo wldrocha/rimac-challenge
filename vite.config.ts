@@ -6,13 +6,14 @@ export default defineConfig({
   plugins: [react()],
   css: {
     preprocessorOptions: {
-      scss: {}
+      scss: {
+        additionalData: `@import '@/styles/colors/colors.scss';`
+      }
     }
-  }
-  ,
+  },
   resolve: {
     alias: {
-      '@': '/src',
-    },
-  },
+      '@': '/src'
+    }
+  }
 })
