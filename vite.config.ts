@@ -9,4 +9,10 @@ export default defineConfig({
       scss: {}
     }
   }
+  ,
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 })
