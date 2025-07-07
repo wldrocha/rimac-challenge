@@ -1,0 +1,55 @@
+.rm_select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f7f8fc;
+  border: 1px solid #5e6488;
+
+  border-radius: 8px 0 0 8px;
+  padding: 0 1.5rem;
+  position: relative;
+  min-height: 56px;
+
+  &__control {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #494f66;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding-right: 2rem;
+    outline: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1.2rem;
+    color: #000;
+  }
+  &__option {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

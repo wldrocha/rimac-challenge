@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Button, Header } from '@/shared/components/'
+import { Button, Header, SelectInput } from '@/shared/components/'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +22,14 @@ function App() {
       <div className='card'>
         <Button onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
         <Button variant='primary'>Cotiza aquí</Button>
+        <SelectInput
+          label='Tipo de documento'
+          options={[
+            { label: 'test 1', value: 'test 1' },
+            { label: 'test 2', value: 'test 2' },
+            { label: 'test 3', value: 'test 3' }
+          ]}
+        />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
