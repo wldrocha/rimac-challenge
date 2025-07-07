@@ -8,19 +8,11 @@
   align-items: center;
   font-family: 'Monserrat', Arial, sans-serif;
 
-  &__logo-movil {
-    height: 1.25rem;
-  }
-
-  &__logo-desktop {
-    display: none;
-  }
-
   &__separator {
     background-color: #2b304e;
     height: 1px;
     width: 290px;
-    margin: 1.25rem 0;
+    margin: 20px 0;
   }
 
   &__description {
@@ -34,15 +26,6 @@
     justify-content: space-between;
     padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
     box-sizing: border-box;
-
-    &__logo-movil {
-      display: none;
-    }
-
-    &__logo-desktop {
-      display: block;
-      height: 42px;
-    }
 
     &__separator {
       display: none;
