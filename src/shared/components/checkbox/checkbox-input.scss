@@ -1,0 +1,19 @@
+.rm-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $color-checkbox-default;
+}
+
+.rm-checkbox__input {
+  width: 18px;
+  height: 18px;
+  accent-color: $color-checkbox-default;
+}
+
+.rm-checkbox__label {
+  font-size: 1rem;
+  color: #494f66;
+  cursor: pointer;
+  user-select: none;
+}
