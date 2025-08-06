@@ -1,5 +1,6 @@
 .rm_quote-form {
   display: grid;
+  width: 100%;
   column-gap: 1.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 160px 1fr;
@@ -42,17 +43,23 @@
   &__subtitle {
     grid-area: text;
     border-top: 1px solid #ccd1ee;
-    padding-top: 1.5rem;
-    @media (width > 768px) {
-      border-top: none;
-    }
+    padding-top: 1em;
   }
   &__form {
     grid-area: form;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__form-group {
+    display: flex;
+  }
+  &__terms-link {
+    font-size: 0.75rem;
+    text-decoration: underline;
   }
   //   &__separator {
   //     grid-area: separator;
