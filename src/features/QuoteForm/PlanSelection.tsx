@@ -3,6 +3,7 @@ import { PlanSelectionCard } from './components/plan-selection-card/PlanSelectio
 import './plan-selection.scss'
 import { PersonalIcon } from '@/shared/components/icons/PersonalIcon'
 import { OtherPersonIcon } from '@/shared/components/icons/OtherPersonIcon'
+import { PlanDetailsCard } from './components/plan-details-card/PlanDetailsCard'
 
 export const PlanSelection = () => (
   <>
@@ -25,7 +26,19 @@ export const PlanSelection = () => (
           icon={<OtherPersonIcon />}
         />
       </div>
-      <div className='rm_plan_selection_list'></div>
+      <div className='rm_plan_selection_list'>
+        <PlanDetailsCard
+          name='Plan en Casa'
+          description={[
+            'Médico general a domicilio por S/20 y medicinas cubiertas al 100%.',
+            'Videoconsulta y orientación telefónica al 100% en medicina general + pediatría.',
+            'Indemnización de S/300 en caso de hospitalización por más de un día.'
+          ]}
+          price={89}
+          icon={<PersonalIcon />}
+          onClick={() => console.log('Plan en Casa selected')}
+        />
+      </div>
     </div>
   </>
 )
