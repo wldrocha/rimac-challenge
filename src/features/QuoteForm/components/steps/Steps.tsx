@@ -10,15 +10,16 @@ const Step = ({ number, label, isActive }: StepItem) => (
 
 interface StepsProps {
   stepList: StepItem[]
+  className?: string
 }
 
-export const Steps = ({ stepList }: StepsProps) => {
+export const Steps = ({ stepList, className }: StepsProps) => {
   const activeStep = stepList.find(step => step.isActive) || stepList[0]
   const totalSteps = stepList.length
   const progressPercentage = (activeStep.number / totalSteps) * 100
 
   return (
-    <div className='rm_steps'>
+    <div className={`rm_steps ${className}`}>
       {/* Vista desktop - controlada por CSS */}
       <div className='rm_steps_desktop'>
         {stepList.map((step) => (

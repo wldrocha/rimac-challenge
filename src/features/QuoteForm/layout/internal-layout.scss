@@ -1,7 +1,42 @@
 .rm_internal_layout {
+  padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
+  &_content {
+    display: flex;
+    align-items: center;
+  }
+
+  &_steps {
+    width: 85%;
+    order: 2;
+    align-items: center;
+  }
 
   &_back_button {
+    order: 1;
+    width: 15%;
+    display: flex;
+    align-items: center;
     color: #4f4fff;
     font-size: 1.2rem;
+    padding: 0;
+    &_label {
+      display: none;
+    }
+  }
+  @media (width >= 1360px) {
+    &_content {
+      display: block;
+    }
+    &_steps {
+      width: 100%;
+    }
+    &_back_button {
+      width: 100%;
+      gap: 0.3rem;
+      margin-bottom: 1.5rem;
+      &_label {
+        display: block;
+      }
+    }
   }
 }

@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes } from 'react'
 import './button.scss'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary' | 'default'
+  variant?: 'primary' | 'secondary' | 'default' | 'transparent'
   className?: string
 }
 

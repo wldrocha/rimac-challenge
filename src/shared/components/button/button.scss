@@ -20,4 +20,9 @@
   &--default {
     background: #eee;
   }
+  &--transparent {
+    background: transparent;
+    color: $color-primary;
+    font-family: 'Lato', Arial, sans-serif;
+  }
 }
