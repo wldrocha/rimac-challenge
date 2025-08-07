@@ -1,5 +1,4 @@
 
-import { ArrowIcon } from '../icons/ArrowIcon'
 
 import './select-input.scss'
 

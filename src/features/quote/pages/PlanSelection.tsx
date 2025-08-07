@@ -1,9 +1,9 @@
-import { PlanSelectionCard } from './components/plan-selection-card/PlanSelectionCard'
-import './plan-selection.scss'
+import { PlanSelectionCard } from '../components/plan-selection-card/PlanSelectionCard'
+import '../styles/plan-selection.scss'
 import { PersonalIcon } from '@/shared/components/icons/PersonalIcon'
 import { OtherPersonIcon } from '@/shared/components/icons/OtherPersonIcon'
-import { PlanDetailsCard } from './components/plan-details-card/PlanDetailsCard'
-import { InternalLayout } from './layout/InternalLayout'
+import { PlanDetailsCard } from '../components/plan-details-card/PlanDetailsCard'
+import { InternalLayout } from '../layout/InternalLayout'
 
 export const PlanSelection = () => (
   <InternalLayout>
