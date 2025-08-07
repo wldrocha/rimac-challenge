@@ -1,3 +1,7 @@
+:has(.rm_quote-form) {
+  background: radial-gradient(ellipse 432px 656px at -4% 70%, #c333ff 5%, transparent 45%),
+    radial-gradient(ellipse 432px 656px at 104% 14%, #7af8eb 1%, transparent 45%);
+}
 .rm_quote-form {
   display: grid;
   width: 100%;
@@ -5,14 +9,13 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 160px 1fr;
   font-family: 'Monserrat', Arial, sans-serif;
-  /* Nombramos las áreas para formar una cuadrícula de 2x2 */
+
   grid-template-areas:
     'badge  image'
     'title  image'
     'text   text'
     'form   form';
   padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
-  
 
   &__image {
     grid-area: image;
@@ -98,7 +101,6 @@
     }
 
     &__subtitle {
-      font-size: 1rem;
       border-top: none;
       font-size: 0.875rem;
       padding-top: 0;
