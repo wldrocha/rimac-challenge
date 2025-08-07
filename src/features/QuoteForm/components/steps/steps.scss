@@ -1,0 +1,105 @@
+.rm_steps {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
+
+  &_desktop {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_mobile {
+    display: none;
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+
+    .rm_steps_text {
+      display: flex;
+      width: 25%;
+      font-weight: bold;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .rm_steps_progress_bar {
+      width: 75%;
+      max-width: 60%;
+      height: 6px;
+      background-color: #e0e0e0;
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .rm_steps_progress_fill {
+      height: 100%;
+      background-color: #4f4fff;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+  }
+
+  &_item {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+
+    &_number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #7981b2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .active {
+    .rm_steps_item_number {
+      color: #fff;
+      background-color: #4f4fff;
+      border: none;
+    }
+    .rm_steps_item_label {
+      color: #000;
+      font-weight: 700;
+    }
+  }
+
+  &_item {
+    color: #7981b2;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .rm_steps {
+    &_desktop {
+      display: none;
+    }
+
+    &_mobile {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .rm_steps {
+    &_mobile {
+      display: none;
+    }
+  }
+}
