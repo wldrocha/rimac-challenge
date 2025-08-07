@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
+  min-width: 288px;
 
   &_cards {
     display: flex;
@@ -28,7 +29,22 @@
     margin-top: 1.25rem;
     display: flex;
     gap: 2.5rem;
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #bdbdbd #f9faff;
   }
+
+  /* Scrollbar para navegadores Webkit */
+  &_list::-webkit-scrollbar {
+    height: 8px;
+    background: #f9faff;
+  }
+  &_list::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    border-radius: 4px;
+  }
+
 
   @media (width >= 1360px) {
     &_title {

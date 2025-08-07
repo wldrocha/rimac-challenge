@@ -38,6 +38,17 @@ export const PlanSelection = () => (
           icon={<PersonalIcon />}
           onClick={() => console.log('Plan en Casa selected')}
         />
+        <PlanDetailsCard
+          name='Plan en Casa'
+          description={[
+            'Médico general a domicilio por S/20 y medicinas cubiertas al 100%.',
+            'Videoconsulta y orientación telefónica al 100% en medicina general + pediatría.',
+            'Indemnización de S/300 en caso de hospitalización por más de un día.'
+          ]}
+          price={89}
+          icon={<PersonalIcon />}
+          onClick={() => console.log('Plan en Casa selected')}
+        />
       </div>
     </div>
   </>

@@ -1,4 +1,4 @@
-import { Card } from '@/shared/components'
+import { Button, Card } from '@/shared/components'
 import './plan-detail-card.scss'
 
 interface PlanDetailsCardProps {
@@ -20,14 +20,21 @@ export const PlanDetailsCard = ({ name, description, price, icon, onClick }: Pla
         {price && (
           <div className='rm_plan_detail_card_price'>
             <span className='rm_plan_detail_card_price_label'>costo del plan</span>
-            <span className='rm_plan_detail_card_price_value' aria-label={`Precio del plan: ${price}`}>${price} al mes</span>
+            <span className='rm_plan_detail_card_price_value' aria-label={`Precio del plan: ${price}`}>
+              ${price} al mes
+            </span>
           </div>
         )}
         <ul className='rm_plan_detail_card_description'>
           {description.map((line) => (
-            <li className='rm_plan_detail_card_description_line' key={`line-${line}`}>{line}</li>
+            <li className='rm_plan_detail_card_description_line' key={`line-${line}`}>
+              {line}
+            </li>
           ))}
         </ul>
+        <Button variant='primary' className='rm_plan_detail_card_button'>
+          Seleccionar plan
+        </Button>
       </Card>
     </article>
   )
