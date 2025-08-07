@@ -5,23 +5,18 @@ import './plan-selection-card.scss'
 interface PlanSelectionCardProps {
   title: string
   description: string
-  isDisabled?: boolean
   icon?: ReactNode
 }
 
-export const PlanSelectionCard = ({ title, description, icon, isDisabled = false }: PlanSelectionCardProps) => {
+export const PlanSelectionCard = ({ title, description, icon }: PlanSelectionCardProps) => {
   const [isSelected, setIsSelected] = useState(false)
 
   const handleClick = () => {
-    if (isDisabled) {
-      return
-    }
-
     setIsSelected(!isSelected)
   }
 
   return (
-    <div onClick={handleClick} style={{ cursor: isDisabled ? 'not-allowed' : 'pointer' }}>
+    <div onClick={handleClick}>
       <Card className='rm_plan_selection_card' isSelected={isSelected}>
         <div className='rm_plan_selection_card_container'>
           {icon && <div className='rm_plan_selection_card_icon'>{icon}</div>}

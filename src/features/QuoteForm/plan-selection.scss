@@ -1,0 +1,33 @@
+.rm_plan_selection {
+  background-color: rgb(249, 250, 255);
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
+
+  &_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  // todo: move this
+  &_back_button {
+    color: #4f4fff;
+  }
+  &_title {
+    font-size: 1.75rem;
+    width: 100%;
+  }
+  &_description {
+    font-size: 1rem;
+  }
+
+  @media (width >= 1360px) {
+    &_title {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+}
