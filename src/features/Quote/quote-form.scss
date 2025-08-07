@@ -12,10 +12,18 @@
     'text   text'
     'form   form';
   padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
+  
 
   &__image {
     grid-area: image;
     max-width: 136px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
   }
 
   &__badge {
@@ -29,15 +37,11 @@
     border-radius: 0.3rem;
     white-space: nowrap;
   }
-  &__form__title {
+
+  &__title {
     grid-area: title;
     font-weight: 700;
     font-size: 1.625rem;
-  }
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   &__subtitle {
@@ -45,6 +49,7 @@
     border-top: 1px solid #ccd1ee;
     padding-top: 1em;
   }
+
   &__form {
     grid-area: form;
     display: flex;
@@ -57,10 +62,64 @@
   &__form-group {
     display: flex;
   }
+
+  &__checkbox-group {
+    .rm-checkbox__label {
+      font-size: 0.75rem;
+    }
+  }
+
   &__terms-link {
     font-size: 0.75rem;
     text-decoration: underline;
   }
+
+  @media (width >= 1360px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'image  badge'
+      'image  title'
+      'image   text'
+      'image   form';
+
+    &__image {
+      max-width: 100%;
+    }
+
+    &__badge {
+      width: fit-content;
+    }
+
+    &__title {
+      font-size: 2rem;
+      max-width: 352px;
+      margin-bottom: 0;
+      margin-top: 1rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+      border-top: none;
+      font-size: 0.875rem;
+      padding-top: 0;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    &__form {
+      display: flex;
+      gap: 1rem;
+    }
+    .rm_button {
+      // en el diseño recomeinda esto, sin embargo por ux estire el botón al ancho del contenedor
+      // max-width: 195px;
+      font-size: 1.25rem;
+    }
+
+    :is(&__content, &__subtitle, &__form) {
+      max-width: 352px;
+    }
+  }
+
   //   &__separator {
   //     grid-area: separator;
   //     background-color: #ccd1ee;
