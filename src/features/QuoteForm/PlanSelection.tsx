@@ -1,16 +1,12 @@
-import { Button, Header } from '@/shared/components'
 import { PlanSelectionCard } from './components/plan-selection-card/PlanSelectionCard'
 import './plan-selection.scss'
 import { PersonalIcon } from '@/shared/components/icons/PersonalIcon'
 import { OtherPersonIcon } from '@/shared/components/icons/OtherPersonIcon'
 import { PlanDetailsCard } from './components/plan-details-card/PlanDetailsCard'
+import { InternalLayout } from './layout/InternalLayout'
 
 export const PlanSelection = () => (
-  <>
-    <Header />
-    <Button variant='default' className='rm_plan_selection_back_button'>
-      Volver
-    </Button>
+  <InternalLayout>
     <div className='rm_plan_selection'>
       <h2 className='rm_plan_selection_title'>Rocío ¿Para quién deseas cotizar?</h2>
       <p className='rm_plan_selection_description'>Selecciona la opción que se ajuste más a tus necesidades.</p>
@@ -51,5 +47,5 @@ export const PlanSelection = () => (
         />
       </div>
     </div>
-  </>
+  </InternalLayout>
 )
