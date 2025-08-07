@@ -9,6 +9,10 @@
     width: 85%;
     order: 2;
     align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  &_header, &_content, &_back_button {
+    background-color: #fff;
   }
 
   &_back_button {

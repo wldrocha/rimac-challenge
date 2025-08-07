@@ -23,17 +23,19 @@ export const InternalLayout = ({ children }: InternalLayoutProps) => {
   }))
 
   return (
-    <div className='rm_internal_layout'>
-      <Header />
-      <div className='rm_internal_layout_content'>
-        <Steps stepList={updatedStepList} className='rm_internal_layout_steps' />
+    <div className='wrap-summary'>
+      <div className='rm_internal_layout'>
+        <Header className='rm_internal_layout_header' />
+        <div className='rm_internal_layout_content'>
+          <Steps stepList={updatedStepList} className='rm_internal_layout_steps' />
 
-        <Button variant='transparent' className='rm_internal_layout_back_button'>
-          <BackIcon />
-          <span className='rm_internal_layout_back_button_label'>Volver</span>
-        </Button>
+          <Button variant='transparent' className='rm_internal_layout_back_button'>
+            <BackIcon />
+            <span className='rm_internal_layout_back_button_label'>Volver</span>
+          </Button>
+        </div>
+        {children}
       </div>
-      {children}
     </div>
   )
 }
