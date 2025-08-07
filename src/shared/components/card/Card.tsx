@@ -8,5 +8,5 @@ interface CardProps {
 }
 
 export const Card = ({ children, className, isSelected, ...props }: CardProps) => {
-  return <div className={`rm_card ${className} ${isSelected ? 'selected' : ''}`} {...props}>{children}</div>
+  return <article className={`rm_card ${className} ${isSelected ? 'selected' : ''}`} {...props}>{children}</article>
 }
