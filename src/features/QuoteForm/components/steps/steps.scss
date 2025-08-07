@@ -17,7 +17,8 @@
     display: none;
     display: flex;
     width: 100%;
-    gap: 1rem;
+    gap: 0.5rem;
+    justify-content: space-between;
     align-items: center;
 
     .rm_steps_text {
