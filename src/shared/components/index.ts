@@ -1,4 +1,5 @@
 export * from './button/Button'
+export * from './card/Card'
 export * from './checkbox/CheckboxInput'
 export * from './footer/Footer'
 export * from './header/Header'
