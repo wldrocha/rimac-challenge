@@ -16,14 +16,14 @@ export const PlanSelectionCard = ({ title, description, icon }: PlanSelectionCar
   }
 
   return (
-    <div onClick={handleClick}>
+    <article onClick={handleClick}>
       <Card className='rm_plan_selection_card' isSelected={isSelected}>
-        <div className='rm_plan_selection_card_container'>
+        <header className='rm_plan_selection_card_container'>
           {icon && <div className='rm_plan_selection_card_icon'>{icon}</div>}
           <h3 className='rm_plan_selection_card_title'>{title}</h3>
-        </div>
-        <p className='rm_plan_selection_card_description'>{description}</p>
+        </header>
+        <section className='rm_plan_selection_card_description'>{description}</section>
       </Card>
-    </div>
+    </article>
   )
 }
