@@ -1,5 +1,9 @@
 .rm_internal_layout {
   padding: clamp(10px, 2vw, 14px) clamp(24px, 5vw, 120px);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
   &_content {
     display: flex;
     align-items: center;
