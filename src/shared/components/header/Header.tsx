@@ -1,5 +1,5 @@
 import LogoRimac from '@/assets/imgs/logo-rimac.png'
-import './Header.scss'
+import './header.scss'
 interface HeaderProps {
   className?: string
 }
