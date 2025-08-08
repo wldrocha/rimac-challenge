@@ -1,4 +1,4 @@
-@import '@/styles/colors/colors.scss';
+@use '@/styles/colors/colors.scss' as *;
 
 .wrap-summary {
   background-color: rgb(249, 250, 255);
