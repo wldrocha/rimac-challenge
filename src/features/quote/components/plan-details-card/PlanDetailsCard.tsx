@@ -11,8 +11,8 @@ interface PlanDetailsCardProps {
 
 export const PlanDetailsCard = ({ name, description, price, icon, onClick }: PlanDetailsCardProps) => {
   return (
-    <article className='rm_plan_detail_card' onClick={onClick}>
-      <Card>
+    <article onClick={onClick}>
+      <Card className='rm_plan_detail_card'>
         <header className='rm_plan_detail_card_container'>
           <h2 className='rm_plan_detail_card_name'>{name}</h2>
           {icon && <div className='rm_plan_detail_card_icon'>{icon}</div>}
