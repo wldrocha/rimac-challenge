@@ -1,19 +1,23 @@
 import { ExternalLayout } from './layout/ExternalLayout'
 import FamilyImage from '@/assets/imgs/family.png'
 import { useForm } from 'react-hook-form'
+import { Button, CheckboxInput, SelectInput, TextInput } from '@/shared/components'
+import { useQuoteContext } from './context/useQuoteContext'
 
 import './quote-form.scss'
-import { Button, CheckboxInput, SelectInput, TextInput } from '@/shared/components'
+import { useNavigate } from 'react-router-dom'
 
 type FormData = {
   dniType: string
-  documentId: string
-  celular: string
+  dni: string
+  phone: string
   privacyPolicy: boolean
   commercialCommunications: boolean
 }
 
 export const QuoteForm = () => {
+  const { handleUpdateUser, loading, error } = useQuoteContext()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -26,8 +30,11 @@ export const QuoteForm = () => {
     }
   })
 
-  const onSubmit = (data: FormData) => {
-    console.log('Form data:', data)
+  const handleSelectPlans = () => navigate('/select-plan')
+
+  const onSubmit = ({ dni, phone }: FormData) => {
+    handleUpdateUser({ dni, phone })
+    handleSelectPlans()
   }
   return (
     <ExternalLayout>
@@ -56,45 +63,45 @@ export const QuoteForm = () => {
               error={errors.dniType?.message}
             />
             <TextInput
-              id='documentId'
+              id='dni'
               className='rm_quote-form__form-group__input'
               label='Nro. de documento'
               variant='border-right'
               placeholder='30216147'
-              {...register('documentId', {
+              {...register('dni', {
                 required: 'El número de documento es requerido',
                 pattern: {
                   value: /^[0-9]{8}$/,
                   message: 'El documento debe tener 8 dígitos'
                 }
               })}
-              error={errors.documentId?.message}
+              error={errors.dni?.message}
             />
           </div>
           <TextInput
-            id='celular'
+            id='phone'
             className='rm_quote-form__form-group__input'
             label='Celular'
             placeholder='5130216147'
-            {...register('celular', {
+            {...register('phone', {
               required: 'El número de celular es requerido',
               pattern: {
                 value: /^[0-9]{10}$/,
                 message: 'El celular debe tener 10 dígitos'
               }
             })}
-            error={errors.celular?.message}
+            error={errors.phone?.message}
           />
 
           <div className='rm_quote-form__checkbox-group'>
-            <CheckboxInput 
+            <CheckboxInput
               label='Acepto la Política de Privacidad'
               {...register('privacyPolicy', {
                 required: 'Debes aceptar la Política de Privacidad'
               })}
               error={errors.privacyPolicy?.message}
             />
-            <CheckboxInput 
+            <CheckboxInput
               label='Acepto la Política Comunicaciones Comerciales'
               {...register('commercialCommunications', {
                 required: 'Debes aceptar las Comunicaciones Comerciales'
@@ -107,7 +114,9 @@ export const QuoteForm = () => {
             Aplican Términos y Condiciones.
           </a>
 
-          <Button type='submit' variant='secondary'>Cotiza aquí</Button>
+          <Button type='submit' variant='secondary'>
+            Cotiza aquí
+          </Button>
         </form>
       </div>
     </ExternalLayout>
