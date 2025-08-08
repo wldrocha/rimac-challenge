@@ -6,11 +6,13 @@ export interface User {
   age?: number
   dni?: string
   phone?: string
+  plan?: Plan
 }
 
 export interface Plan {
-  name: string;
-  price: number;
-  description: string[];
-  age: number;
+  name: string
+  price: number
+  description: string[]
+  age: number
+  originalPrice?: number
 }

@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { Card } from '@/shared/components'
 import './plan-selection-card.scss'
 
@@ -6,13 +6,19 @@ interface PlanSelectionCardProps {
   title: string
   description: string
   icon?: ReactNode
+  isSelected: boolean
+  onClick?: () => void
 }
 
-export const PlanSelectionCard = ({ title, description, icon }: PlanSelectionCardProps) => {
-  const [isSelected, setIsSelected] = useState(false)
-
+export const PlanSelectionCard = ({
+  title,
+  description,
+  icon,
+  isSelected,
+  onClick = () => {}
+}: PlanSelectionCardProps) => {
   const handleClick = () => {
-    setIsSelected(!isSelected)
+    onClick()
   }
 
   return (

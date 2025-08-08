@@ -6,10 +6,18 @@ interface PlanDetailsCardProps {
   description: string[]
   icon?: React.ReactNode
   price?: number
+  originalPrice?: number
   onClick?: () => void
 }
 
-export const PlanDetailsCard = ({ name, description, price, icon, onClick }: PlanDetailsCardProps) => {
+export const PlanDetailsCard = ({
+  name,
+  description,
+  price,
+  originalPrice,
+  icon,
+  onClick
+}: PlanDetailsCardProps) => {
   return (
     <article onClick={onClick}>
       <Card className='rm_plan_detail_card'>
@@ -20,6 +28,11 @@ export const PlanDetailsCard = ({ name, description, price, icon, onClick }: Pla
         {price && (
           <div className='rm_plan_detail_card_price'>
             <span className='rm_plan_detail_card_price_label'>costo del plan</span>
+            {originalPrice && (
+              <span className='rm_plan_detail_card_price_value_original' aria-label={`Precio del plan: ${originalPrice}`}>
+                ${originalPrice} al mes
+              </span>
+            )}
             <span className='rm_plan_detail_card_price_value' aria-label={`Precio del plan: ${price}`}>
               ${price} al mes
             </span>
