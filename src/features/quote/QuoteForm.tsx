@@ -16,7 +16,7 @@ type FormData = {
 }
 
 export const QuoteForm = () => {
-  const { handleUpdateUser, loading, error } = useQuoteContext()
+  const { handleUpdateUser } = useQuoteContext()
   const navigate = useNavigate()
   const {
     register,

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { fetchUser, fetchPlans } from '@/shared/services/api'
 import type { User, Plan } from '@/shared/services/types'
