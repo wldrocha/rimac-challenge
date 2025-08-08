@@ -70,6 +70,11 @@
     .rm-checkbox__label {
       font-size: 0.75rem;
     }
+    .rm-input__error {
+      font-size: 0.75rem;
+      color: red;
+      width: 100%          ;
+    }
   }
 
   &__terms-link {
