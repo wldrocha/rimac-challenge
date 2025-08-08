@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { BackIcon, Button, Header } from '@/shared/components'
 import { Steps } from '../components/steps/Steps'
 import type { StepItem } from '@/shared/types'
@@ -16,11 +16,16 @@ const stepList: StepItem[] = [
 
 export const InternalLayout = ({ children }: InternalLayoutProps) => {
   const location = useLocation()
+  const navigate = useNavigate()
 
   const updatedStepList = stepList.map((step) => ({
     ...step,
     isActive: location.pathname === step.urlSegment
   }))
+
+  const handleBack = () => {
+    navigate(-1)
+  }
 
   return (
     <div className='wrap-summary'>
@@ -29,7 +34,7 @@ export const InternalLayout = ({ children }: InternalLayoutProps) => {
         <div className='rm_internal_layout_content'>
           <Steps stepList={updatedStepList} className='rm_internal_layout_steps' />
 
-          <Button variant='transparent' className='rm_internal_layout_back_button'>
+          <Button variant='transparent' className='rm_internal_layout_back_button' onClick={handleBack}>
             <BackIcon />
             <span className='rm_internal_layout_back_button_label'>Volver</span>
           </Button>
