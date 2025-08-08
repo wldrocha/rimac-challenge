@@ -30,6 +30,11 @@ export const TextInput = ({
         aria-invalid={!!error}
         {...props}
       />
+      {error && (
+        <span className='rm-input__error' role='alert'>
+          {error}
+        </span>
+      )}
     </div>
   )
 }

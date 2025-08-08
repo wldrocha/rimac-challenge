@@ -36,9 +36,6 @@ export const SelectInput = ({
           </option>
         ))}
       </select>
-      {/* <div className='rm_select__arrow'>
-        <ArrowIcon />
-      </div> */}
       {helperText && !error && <span className='rm-input__helper'>{helperText}</span>}
       {error && (
         <span className='rm-input__error' role='alert'>
